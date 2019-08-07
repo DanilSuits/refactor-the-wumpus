@@ -76,7 +76,7 @@ public class GuruChecksOutput {
                     // This is the entry point to the system under test.
                     // It should be treated as a frozen specification -- new behaviors
                     // should be accessed via a new entry point (which may or may not
-                    // share a lot of the implementation details with BasicWumpus.
+                    // share a lot of the implementation details with BasicWumpus).
 
                     BasicWumpus.main(args);
                 }
