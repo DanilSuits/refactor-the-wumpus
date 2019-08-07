@@ -193,7 +193,7 @@
                         <plugin>
                             <groupId>org.owasp</groupId>
                             <artifactId>dependency-check-maven</artifactId>
-                            <version>3.3.2</version>
+                            <version>5.2.1</version>
                         </plugin>
                     </plugins>
                 </pluginManagement>
@@ -246,19 +246,6 @@
                                     <goal>check</goal>
                                 </goals>
                                 <phase>validate</phase>
-                                <configuration>
-                                    <!-- https://github.com/jeremylong/DependencyCheck/issues/1171 -->
-
-                                    <cveUrl12Modified>https://nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-modified.xml.gz
-                                    </cveUrl12Modified>
-                                    <cveUrl20Modified>
-                                        https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-modified.xml.gz
-                                    </cveUrl20Modified>
-                                    <cveUrl12Base>https://nvd.nist.gov/feeds/xml/cve/1.2/nvdcve-%d.xml.gz</cveUrl12Base>
-                                    <cveUrl20Base>https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz
-                                    </cveUrl20Base>
-
-                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
