@@ -1,0 +1,34 @@
+containers:
+  build-env:
+    image: adoptopenjdk:11-jdk-hotspot
+    environment:
+      # See:
+      # - https://docs.gradle.org/6.8/userguide/gradle_daemon.html#sec:disabling_the_daemon
+      # - https://docs.gradle.org/6.8/userguide/build_environment.html#sec:configuring_jvm_memory
+      JAVA_OPTS: -Xmx512m -XX:MaxMetaspaceSize=256m
+    run_as_current_user:
+      enabled: true
+      home_directory: /home/container-user
+    volumes:
+      - local: .
+        container: /code
+        options: cached
+      - local: ~/.gradle
+        container: /home/container-user/.gradle
+        options: cached
+      - local: ~/.m2
+        container: /home/container-user/.m2
+        options: cached
+    working_directory: /code
+
+tasks:
+  build:
+    description: Build and test with Maven
+    run:
+      container: build-env
+      command: ./mvnw --no-transfer-progress --strict-checksums clean verify
+  shell:
+    description: Open a shell in the container
+    run:
+      container: build-env
+      command: /bin/bash
