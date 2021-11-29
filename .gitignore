@@ -1,1 +1,4 @@
-target
+/.batect/
+/.idea/
+/*.iml
+/target/
