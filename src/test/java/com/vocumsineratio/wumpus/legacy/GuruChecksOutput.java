@@ -57,7 +57,6 @@ public class GuruChecksOutput {
 
         InputStream inputAsStream = GuruChecksOutput.class.getResourceAsStream(inputSource);
 
-
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream out = new PrintStream(baos);
 
@@ -80,7 +79,6 @@ public class GuruChecksOutput {
 
                     BasicWumpus.main(args);
                 }
-
             } catch (NoSuchElementException ignore) {
                 // BasicWumpus just runs in a loop until the input is exhausted. So
                 // our tests, which check the behavior after a finite number of inputs
@@ -89,7 +87,6 @@ public class GuruChecksOutput {
                 System.setOut(originalOut);
                 System.setIn(originalIn);
             }
-
         }
 
         InputStream expectedAsStream = GuruChecksOutput.class.getResourceAsStream(expectedOutputSource);
@@ -104,7 +101,5 @@ public class GuruChecksOutput {
         Assertions.assertEquals(
                 expectedResult.toString("UTF-8"),
                 baos.toString("UTF-8"));
-
-
     }
 }
