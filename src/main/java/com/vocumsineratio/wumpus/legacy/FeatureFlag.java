@@ -25,12 +25,10 @@ class FeatureFlag {
     }
 
     static boolean xkcd221() {
-        return "com.vocumsineratio.random.XKCD221".equals(
-                xkcd221(System.getenv())
-        );
+        return "com.vocumsineratio.random.XKCD221".equals(xkcd221(System.getenv()));
     }
 
     static String xkcd221(Map<String, String> env) {
-        return env.get("WUMPUS_SEED_GENERATOR");
+        return env.getOrDefault("WUMPUS_SEED_GENERATOR", "com.vocumsineratio.random.XKCD221");
     }
 }

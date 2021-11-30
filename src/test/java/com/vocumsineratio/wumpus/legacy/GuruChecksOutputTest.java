@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 /**
  * @author Danil Suits (danil@vast.com)
  */
-public class GuruChecksOutput {
+public class GuruChecksOutputTest {
 
     static Stream<Arguments> goldenMasters() {
         return Stream.of(
@@ -55,7 +55,7 @@ public class GuruChecksOutput {
         // Bats in room #16
         // Bats in room #1
 
-        InputStream inputAsStream = GuruChecksOutput.class.getResourceAsStream(inputSource);
+        InputStream inputAsStream = GuruChecksOutputTest.class.getResourceAsStream(inputSource);
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream out = new PrintStream(baos);
@@ -89,7 +89,7 @@ public class GuruChecksOutput {
             }
         }
 
-        InputStream expectedAsStream = GuruChecksOutput.class.getResourceAsStream(expectedOutputSource);
+        InputStream expectedAsStream = GuruChecksOutputTest.class.getResourceAsStream(expectedOutputSource);
 
         ByteArrayOutputStream expectedResult = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
