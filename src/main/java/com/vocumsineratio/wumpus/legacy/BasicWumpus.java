@@ -10,7 +10,7 @@ public class BasicWumpus {
     Scanner in = new Scanner(System.in);
     Random random = FeatureFlag.random();
 
-    int S[][] =
+    int[][] S =
             {{2, 5, 8}, {1, 3, 10}, {2, 4, 12}, {3, 5, 14}, {1, 4, 6}
                     , {5, 7, 15}, {6, 8, 17}, {1, 7, 9}, {8, 10, 18}, {2, 9, 11}
                     , {10, 12, 19}, {3, 11, 13}, {12, 14, 20}, {4, 13, 15}, {6, 14, 16}
@@ -227,7 +227,7 @@ public class BasicWumpus {
         System.out.println(" WUMPUS-  'I SMELL A WUMPUS'");
         System.out.println(" BAT   -  'BATS NEARBY'");
         System.out.println(" PIT   -  'I FEEL A DRAFT'");
-        System.out.println("");
+        System.out.println();
         System.out.flush();
         return;
     }
@@ -350,7 +350,7 @@ public class BasicWumpus {
         // MOVE WUMPUS ROUTINE
         K = FNC(0);
         if (4 != K) {
-            L[1] = S[L[1]-1][K - 1];
+            L[1] = S[L[1] - 1][K - 1];
         }
         if (LL == L[1]) {
             System.out.println("TSK TSK TSK- WUMPUS GOT YOU!");

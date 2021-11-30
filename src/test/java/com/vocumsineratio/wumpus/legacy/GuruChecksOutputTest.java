@@ -10,6 +10,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import java.util.stream.Stream;
 
@@ -99,7 +100,7 @@ public class GuruChecksOutputTest {
         }
 
         Assertions.assertEquals(
-                expectedResult.toString("UTF-8"),
-                baos.toString("UTF-8"));
+                expectedResult.toString(StandardCharsets.UTF_8),
+                baos.toString(StandardCharsets.UTF_8));
     }
 }
