@@ -10,12 +10,28 @@ public class BasicWumpus {
     Scanner in = new Scanner(System.in);
     Random random = FeatureFlag.random();
 
-    int[][] S =
-            {{2, 5, 8}, {1, 3, 10}, {2, 4, 12}, {3, 5, 14}, {1, 4, 6}
-                    , {5, 7, 15}, {6, 8, 17}, {1, 7, 9}, {8, 10, 18}, {2, 9, 11}
-                    , {10, 12, 19}, {3, 11, 13}, {12, 14, 20}, {4, 13, 15}, {6, 14, 16}
-                    , {15, 17, 20}, {7, 16, 18}, {9, 17, 19}, {11, 18, 20}, {13, 16, 19}
-            };
+    final int[][] S = {
+            {2, 5, 8},
+            {1, 3, 10},
+            {2, 4, 12},
+            {3, 5, 14},
+            {1, 4, 6},
+            {5, 7, 15},
+            {6, 8, 17},
+            {1, 7, 9},
+            {8, 10, 18},
+            {2, 9, 11},
+            {10, 12, 19},
+            {3, 11, 13},
+            {12, 14, 20},
+            {4, 13, 15},
+            {6, 14, 16},
+            {15, 17, 20},
+            {7, 16, 18},
+            {9, 17, 19},
+            {11, 18, 20},
+            {13, 16, 19}
+    };
 
     int[] L = new int[6];
     int[] M = new int[6];
@@ -51,7 +67,7 @@ public class BasicWumpus {
         System.out.println();
 
         while (true) {
-            boolean goto240 = false;
+            boolean goto240;
             do {
                 goto240 = false;
                 // LOCATE L ARRAY ITEMS
@@ -125,7 +141,7 @@ public class BasicWumpus {
             System.out.flush();
 
             try {
-                LL = Integer.valueOf(in.nextLine());
+                LL = Integer.parseInt(in.nextLine());
             } catch (NumberFormatException e) {
                 LL = 0;
             }
@@ -229,7 +245,6 @@ public class BasicWumpus {
         System.out.println(" PIT   -  'I FEEL A DRAFT'");
         System.out.println();
         System.out.flush();
-        return;
     }
 
     void gosub2000() {
@@ -249,7 +264,6 @@ public class BasicWumpus {
         System.out.println("TUNNELS LEAD TO " + S[L[0] - 1][0] + " " + S[L[0] - 1][1] + " " + S[L[0] - 1][2]);
         System.out.println();
         System.out.flush();
-        return;
     }
 
     void gosub2500() {
@@ -282,7 +296,7 @@ public class BasicWumpus {
             System.out.println("NO. OF ROOMS(1-5)");
             System.out.flush();
             try {
-                J9 = Integer.valueOf(in.nextLine());
+                J9 = Integer.parseInt(in.nextLine());
             } catch (NumberFormatException e) {
                 J9 = 0;
             }
@@ -295,7 +309,7 @@ public class BasicWumpus {
                 System.out.println("ROOM #");
                 System.out.flush();
                 try {
-                    P[K - 1] = Integer.valueOf(in.nextLine());
+                    P[K - 1] = Integer.parseInt(in.nextLine());
                 } catch (NumberFormatException e) {
                     P[K - 1] = 0;
                 }
@@ -356,6 +370,5 @@ public class BasicWumpus {
             System.out.println("TSK TSK TSK- WUMPUS GOT YOU!");
             F = -1;
         }
-        return;
     }
 }

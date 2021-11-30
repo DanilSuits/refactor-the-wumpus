@@ -7,6 +7,8 @@ import java.util.Random;
  * @author Danil Suits (danil@vast.com)
  */
 class FeatureFlag {
+    private static final String XKCD_221 = "com.vocumsineratio.random.XKCD221";
+
     static Random random() {
         // https://xkcd.com/221/
         if (FeatureFlag.xkcd221()) {
@@ -29,6 +31,6 @@ class FeatureFlag {
     }
 
     static String xkcd221(Map<String, String> env) {
-        return env.getOrDefault("WUMPUS_SEED_GENERATOR", "com.vocumsineratio.random.XKCD221");
+        return env.getOrDefault("WUMPUS_SEED_GENERATOR", XKCD_221);
     }
 }

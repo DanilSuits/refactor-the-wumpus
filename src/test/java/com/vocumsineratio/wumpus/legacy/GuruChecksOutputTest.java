@@ -95,7 +95,9 @@ public class GuruChecksOutputTest {
         ByteArrayOutputStream expectedResult = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = expectedAsStream.read(buffer)) != -1) {
+        while (true) {
+            assert expectedAsStream != null;
+            if ((length = expectedAsStream.read(buffer)) == -1) break;
             expectedResult.write(buffer, 0, length);
         }
 
